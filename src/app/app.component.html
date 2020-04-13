@@ -1,0 +1,42 @@
+
+
+<div class="container p-4">
+  <div class="row">  
+
+    <div class="col-md-6">
+
+      <div class="card card-body">
+        
+        <form>
+          <h1 class="h4" style="color:rgb(6, 66, 156, 0.65);">Inserte la ciudad y código</h1>
+             <form (submit)="submitLocation(cityName,countrycode)">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Nombre Ciudad" #cityName>
+                   </div>
+                   <div class="form-group">
+                     <input type="text" class="form-control" placeholder="Codigo ciudad" #countrycode>
+                        </div>
+                          <button class="btn btn-primary btn-block mt2" >
+                          Otener clima
+                           </button>
+              
+                          </form>
+          </form>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div *ngIf="weather" class="card card-body text-center">
+        <h1 class="h4" h1 class="h4" style="color:rgb(6, 66, 156, 0.65);"> Información Clima</h1>
+        
+        
+        <p>Temperatura: {{wweather.main.temp}} F°</p>
+        <p>Latitud: {{wweather.coord.lon}} </p>
+        <p>Longitud {{wweather.coord.lat}}</p>
+        <p>Humedad {{wweather.main.humidity}} </p>
+       
+      </div>
+    </div>
+
+  </div>
+</div>
